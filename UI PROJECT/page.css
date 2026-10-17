@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Cinzel+Decorative:wght@700&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Crimson Pro', serif;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    max-width: 90%;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 20px;
+}
+
+/* Heading Styling */
+h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    animation: headingEffect 2s infinite ease-in-out;
+}
+
+h1 span {
+    display: inline-block;
+    animation: letterEffect 1.5s infinite alternate ease-in-out;
+}
+
+h1::after {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    mix-blend-mode: overlay;
+    z-index: -1;
+    animation: gradientText 6s infinite linear;
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+    padding: 25px 90px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+p::first-letter {
+    font-size: 3rem;
+    font-family: 'Cinzel Decorative', cursive;
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+    line-height: 1;
+}
+
+p:first-line {
+    font-size: 1.6rem;
+    font-style: italic;
+}
+
+/* Image Styling */
+img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Preserves the aspect ratio */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Adds depth */
+    margin-top: 15px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,128 @@
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Ensures content is centered horizontally */
+    justify-content: flex-start;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('img4.jpg') no-repeat center center fixed; 
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    padding: 10px 20px;  /* Provides padding on the sides */
+    display: flex;
+    justify-content: flex-start; /* Aligns navigation items to the left */
+    align-items: center;
+    position: absolute; /* Positions navigation absolutely to the top left */
+    top: 0;
+    left: 0;
+    background-color: transparent; /* Keeps background consistent with the page */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 20px; /* Space between links */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #043136; /* Text color */
+    font-size: 16px; /* Font size for visibility */
+    font-weight: bold;
+    padding: 10px 20px; /* Adjust padding around the text for background color */
+    border-radius: 20px; /* Rounded corners for the background */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+    display: inline-block; /* Makes the background color wrap the text only */
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #abd9e0; /* Light green background on hover/active */
+}
+
+.container {
+    width: 90%; /* Increases width for a larger container */
+    max-width: 1000px; /* Increases maximum width for larger display */
+    margin: 100px auto; /* Centers container and adds top margin */
+    padding: 40px; /* Increases padding for more internal space */
+    background-color: rgb(132, 186, 197);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Enhances shadow for better focus */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content within the container */
+}
+
+.title-input {
+    width: 100%; /* Full width of the container */
+    padding: 12px 15px; /* Increases padding for better text visibility */
+    font-size: 20px; /* Larger font size for the title */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Increases margin for better spacing */
+}
+
+#editor-container {
+    width: 100%; /* Full width to utilize space */
+    min-height: 300px; /* Increases minimum height for a larger writing area */
+    padding: 15px; /* More padding for internal spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff; /* Ensures a white background for the editor */
+}
+
+.button-container {
+    width: 100%; /* Ensures button container uses full width */
+    display: flex;
+    justify-content: space-between; /* Aligns buttons to the sides */
+    margin-top: 20px; /* More space above the buttons */
+}
+
+.btn {
+    padding: 12px 25px; /* Larger buttons for easier interaction */
+    font-size: 16px; /* Larger font for button text */
+    border-radius: 8px; /* Rounded corners for aesthetic appeal */
+}
+
+.btn-success {
+    background-color: #28a745; /* Specific green for 'Save Story' button */
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Specific red for 'Delete Story' button */
+    color: white;
+}
+
+.social-links {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.social-link {
+    margin-right: 10px; /* Added margin */
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #136371;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    color: white; /* Ensures the icons are visible */
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}

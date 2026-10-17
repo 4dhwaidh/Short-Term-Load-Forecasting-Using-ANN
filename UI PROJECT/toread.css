@@ -1,0 +1,112 @@
+
+nav {
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align items to the start (left) */
+    align-items: center;
+    position: absolute; /* Position the nav absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul a {
+    text-decoration: none;
+    padding: 0.3rem 1.3rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: #a0e7e5;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul a::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-color: #0d3636;
+    z-index: -1;
+    transition: width 0.5s;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #01000c;
+    color: #fff;
+}
+
+h1 {
+    font-size: 55px;
+    text-align: center;
+    margin: 80px 0 40px; /* Adjusted margin for spacing */
+}
+
+.swiper {
+    width: 80%;
+    margin: 0 auto 60px; /* Adjusts space between swipers */
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0002, #0004);
+}
+
+/* CSS styles for social links */
+.social-links {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    z-index: 999;
+}
+
+
+
+.social-link {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0a3634;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    color: white;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}

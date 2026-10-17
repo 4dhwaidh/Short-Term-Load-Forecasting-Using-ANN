@@ -1,0 +1,279 @@
+/* Basic styling for all elements to use border-box sizing */
+* {
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif; /* 'Kanit' font for general use */
+    font-family: 'PT Serif', serif; /* 'PT Serif' font, though this line will override 'Kanit' */
+}
+
+/* Styling for body and html tags */
+body, html {
+    background-color: #0c1016; /* Dark background color */
+    height: 100%; /* Full height */
+    display: flex; /* Using flexbox for centering content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Full width */
+    position: relative; /* Set position relative for positioning children absolutely */
+    z-index: 1; /* Set z-index to ensure it's above other positioned elements */
+}
+
+nav {
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start; /* Align items to the start (left) */
+    align-items: center;
+    position: absolute; /* Position the nav absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul a {
+    text-decoration: none;
+    padding: 0.3rem 1.3rem;
+    font-size: 17px;
+    font-weight: bold;
+    color: #a0e7e5;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul a::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-color: #0d3636;
+
+    z-index: -1;
+    transition: width 0.5s;
+}
+
+nav ul a:hover::after {
+    width: 100%;
+}
+
+/* Pseudo-element for body to create a background layer */
+body::after {
+    content: ''; /* Required for pseudo-elements to display */
+    position: absolute; /* Positioned absolutely to cover the entire body */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.about-heading {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    z-index: 2; /* Ensure the heading is above the video */
+}
+
+.about-heading h1 {
+    font-size: 4rem; /* Adjust font size as needed */
+    color: #a0e7e5; /* Pale aqua color */
+    margin: 0;
+}
+
+/* Styling the wrapper for the flex cards */
+.flex-card-wrapper {
+    width: 70%;          /* Sets the width of the wrapper to 70% of its parent */
+    max-width: 100rem;   /* Limits maximum width to 100rem */
+    height: 70%;         /* Sets the height of the wrapper to 70% of its parent */
+    max-height: 50rem;   /* Limits maximum height to 50rem */
+    display: flex;       /* Enables flexbox layout */
+    justify-content: center; /* Centers flex items horizontally within the wrapper */
+    align-items: center; /* Centers flex items vertically within the wrapper */
+}
+
+/* Styling each card container within the wrapper */
+.flex-card-wrapper .flex-card-container {
+    height: 100%;        /* Each card container takes full height of its parent (the wrapper) */
+    width: 14%;          /* Each card container takes up 14% of the width of its parent */
+    transition: 450ms all ease-in-out; /* Smooth transition effect for all properties */
+    border-radius: 10px; /* Rounded corners with a radius of 10px */
+    cursor: pointer;     /* Pointer cursor on hover */
+    overflow: hidden;    /* Hides parts of the content that overflows the container's box */
+    position: relative;  /* Positioned relative to its normal position */
+    background-position: center center; /* Background image centered */
+    background-size: cover; /* Background image covers the whole container */
+    background-repeat: no-repeat; /* No repetition of the background image */
+    margin: 5px 5px;     /* Margin around each card container */
+}
+
+/* Styles for the active card container */
+.flex-card-wrapper .flex-card-container.active {
+    width: 100%;
+}
+
+/* Styles for text inside the active card's overlay */
+.flex-card-wrapper .flex-card-container.active .overlay h3,
+.flex-card-wrapper .flex-card-container.active .overlay p {
+    opacity: 1;   /* Make text fully opaque (visible) */
+    transform: translateX(0);  /* Reset any translations applied to the text */
+}
+
+/* Background image settings for different cards identified by unique classes */
+.flex-card-wrapper .flex-card-container.poke-1 {
+    background-image: url('img5.jpg');  /* Pikachu background */
+}
+
+.flex-card-wrapper .flex-card-container.poke-2 {
+    background-image: url('img4.jpg');  /* Mew background */
+}
+
+.flex-card-wrapper .flex-card-container.poke-3 {
+    background-image: url('img8.jpg');  /* Squirtle background */
+}
+
+.flex-card-wrapper .flex-card-container.poke-4 {
+    background-image: url('img5.jpg');  /* Charmander background */
+}
+
+/* Background image for the fifth card (Bulbasaur) */
+.flex-card-wrapper .flex-card-container.poke-5 {
+    background-image: url('img4.jpg');
+}
+
+.flex-card-wrapper .flex-card-container.poke-6 {
+    background-image: url('img8.jpg');
+}
+.flex-card-wrapper .flex-card-container.poke-7 {
+    background-image: url('img4.jpg');
+}
+
+/* Remove margin for the last child of the flex card container */
+.flex-card-wrapper .flex-card-container:last-child {
+    margin: 0 0 0 5px;
+}
+
+/* Styles for the overlay inside the card containers */
+.flex-card-wrapper .flex-card-container .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;  /* Ensure overlay takes full height of the card */
+    padding: 2rem;  /* Adjust padding to give space for the text */
+    display: flex;
+    flex-direction: column;  /* Stack the h3 and p vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: flex-start; /* Align content to the start horizontally */
+    width: 100%;
+    transition: 450ms all ease-in-out;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Styles for h3 tags inside the overlay */
+.flex-card-wrapper .flex-card-container .overlay h3 {
+    font-size: 2em; /* Increase font size for subheadings */
+    margin-bottom: 1rem; /* Add some space below the heading */
+    color: white;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: 350ms 200ms all ease-in-out;
+}
+
+/* Styles for paragraph tags inside the overlay */
+.flex-card-wrapper .flex-card-container .overlay p {
+    font-size: 1em; /* Standard font size for paragraph */
+    color: white;
+    position: relative;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 350ms 300ms all ease-in-out;
+}
+
+/* Show the text when the card is active */
+.flex-card-wrapper .flex-card-container.active .overlay h3,
+.flex-card-wrapper .flex-card-container.active .overlay p {
+    opacity: 1;   /* Make text fully opaque (visible) */
+    transform: translateY(0);  /* Reset any translations applied to the text */
+}
+
+/* Media Queries */
+
+/* Adjustments for screens with a max width of 1024px */
+@media (max-width: 1024px) {
+    .flex-card-wrapper {
+        max-width: 90rem; /* Set max width to 90rem */
+        height: 90%;      /* Set height to 90% */
+    }
+}
+
+/* Adjustments for screens with a max width of 992px */
+@media (max-width: 992px) {
+    .flex-card-wrapper {
+        width: 90%;        /* Set width to 90% */
+        flex-flow: row wrap; /* Allow wrapping of flex items in a row */
+    }
+
+    .flex-card-wrapper .flex-card-container {
+        height: 12%;        /* Set height to 12% */
+        width: 100%;        /* Set width to 100% */
+        margin: 5px 0 5px 0; /* Adjust margins */
+    }
+    .flex-card-wrapper .flex-card-container.active{
+        width: 100%;
+        height: 45%;
+    }
+}
+/* CSS styles for social links */
+.social-links {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    display: flex;
+    align-items: center;
+    z-index: 999; /* Ensure social links are above other elements */
+}
+
+
+.social-link {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #0a3634;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    color: white;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
